@@ -1,0 +1,10 @@
+<!-- Lazyload support -->
+<% if (theme.lazyload) { %>
+    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js"></script>
+    <script>
+        window.lazyLoadOptions = {
+            elements_selector: ".lazy",
+            threshold: 0
+        };
+    </script>
+<% } %>
