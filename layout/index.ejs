@@ -1,1 +1,19 @@
-Hello World
+<section class="posts">
+    <% page.posts.each(function (post) { %>
+        <article class="post">
+            <% if (post.thumbnail) { %> 
+                <% if (theme.lazyload) { %>
+                    <div class="post-thumbnail lazy" data-bg="<%= post.thumbnail %>"></div>
+                <% } else { %>
+                    <div class="post-thumbnail" style="background-image: url('<%= post.thumbnail %>');"></div>
+                <% } %>
+            <% } %>
+            <h1 class="post-title"><%= post.title %></h1>
+            <% if (post.excerpt) { %>
+                <div class="post-excerpt"><%- post.excerpt %></div>
+            <% } else { %>
+                <div class="post-content"><%- post.content %></div>
+            <% } %>
+        </article>
+    <% }) %>
+</section>
