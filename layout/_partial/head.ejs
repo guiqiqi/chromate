@@ -1,5 +1,6 @@
 <head>
-    <title><%= title %></title>
+    <title><%= config.title %></title>
+    <% if (config.favicon) favicon_tag(config.favicon) %>
     <meta charset="utf-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -10,17 +11,18 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
 
     <!-- Making Robots Happy -->
-    <meta name="keyword" content="<%= config.description %>">
-    <meta name="description" content="<%= config.description %>">
-
-    <%- favicon_tag(config.favicon) %>
+    <% if (config.keywords) { %>
+        <meta name="keywords" content="<%= config.keywords %>">
+    <% } %>
+    <% if (config.description) { %>
+        <meta name="description" content="<%= config.description %>">
+    <% } %>
 
     <!-- Scripts and styles -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma/css/bulma.min.css">
-    <% if (theme.podcast) { %>
+    <% if (is_post() && theme.podcast && post.podcast) { %>
         <script src="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.js"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.css">
     <% } %>
-    <script src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
-    
+    <%- css("css/style.css") %>
 </head>
