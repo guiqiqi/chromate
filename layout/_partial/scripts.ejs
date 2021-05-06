@@ -4,12 +4,29 @@
     <script>
         window.lazyLoadOptions = {
             elements_selector: ".lazy",
-            threshold: 0
+            threshold: 0,
+            effect: "fadeIn"
         };
     </script>
 <% } %>
 
 <!-- Darkmode support -->
-<script defer src="https://cdn.jsdelivr.net/npm/darkmode-js/lib/darkmode-js.min.js"></script>
+
 
 <!-- Highlight.js support -->
+<% if (theme.highlight.enable === true) { %> 
+    <script defer src="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+    <link id="highlight-light-theme" rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/<%= theme.highlight.lightmode %>.css">
+    <link id="highlight-dark-theme" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/<%= theme.highlight.darkmode %>.css">
+    <script>
+        
+    </script>
+<% } %>
+
+<!-- Shikwasa Player support -->
+<% if (is_post() && theme.podcast && page.podcast) { %>
+    <script defer src="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.css">
+<% } %>

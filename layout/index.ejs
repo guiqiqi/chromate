@@ -1,19 +1,50 @@
 <section class="posts">
     <% page.posts.each(function (post) { %>
         <article class="post">
+            <!-- Post thumbnail with lazayload support -->
             <% if (post.thumbnail) { %> 
-                <% if (theme.lazyload) { %>
+                <% if (theme.lazyload === true) { %>
                     <div class="post-thumbnail lazy" data-bg="<%= post.thumbnail %>"></div>
                 <% } else { %>
                     <div class="post-thumbnail" style="background-image: url('<%= post.thumbnail %>');"></div>
                 <% } %>
             <% } %>
-            <h1 class="post-title"><%= post.title %></h1>
+
+            <!-- Post title and excerpt -->
+            <h1 class="post-title">
+                <a class="post-link" href="<%- url_for(post.path) %>">
+                    <%= post.title %>
+                </a>
+            </h1>
             <% if (post.excerpt) { %>
                 <div class="post-excerpt"><%- post.excerpt %></div>
             <% } else { %>
                 <div class="post-content"><%- post.content %></div>
             <% } %>
+
+            <!-- Post meta -->
+            <div class="post-meta">
+                <% if (post.podcast && theme.podcast && post.duration) { %>
+                    <%
+                        const hour = Math.floor(post.duration / 3600);
+                        const minute = Math.floor((post.duration / 60) % 60);
+                        const second = Math.floor(post.duration % 60);
+                        const duration = hour + ':' + String(minute).padStart(2, '0') + ':' + String(second).padStart(2, '0');
+                    %>
+                    <div class="post-duration"><%- duration %></div>
+                <% } %>
+                <div class="post-time">
+                    <%- date(post.date, "MMM, D YYYY") %> 
+                </div>
+                <% if (post.tags) { %> 
+                    <div class="post-tags">
+                        <% (post.tags).forEach(function(item) { %>
+                            <span class="post-tag"><%= item.name %></span>
+                        <% }); %>
+                    </div>
+                <% } %>
+            </div>
+            
         </article>
     <% }) %>
 </section>

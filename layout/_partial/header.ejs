@@ -1,0 +1,20 @@
+<header class="header">
+    <div class="header-title">
+        <%= config.title %>
+    </div>
+    <nav class="header-navbar">
+        <ul class="header-menu">
+            <% for (let index in theme.navbar) { %>
+                <% 
+                    const mapping = theme.navbar[index];
+                    const link = mapping[0];
+                    const favicon = mapping[1];
+                    let outter = link.startsWith("https://") ? true : false;
+                %>
+                <a href="<%= link %>" target="<%= outter ? '_blank' : '_self' %>">
+                    <i class="<%= favicon %>"></i>
+                </a>
+            <% } %>
+        </ul>
+    </nav>
+</header>
