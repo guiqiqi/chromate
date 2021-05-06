@@ -1,3 +1,10 @@
 podcast: true
 lazyload: true
-highlight: true
+highlight:
+  enable: true
+  lightmode: 'atom-one-light'
+  darkmode: 'atom-one-dark'
+navbar:
+  - ['https://google.com', 'fa fa-google']
+  - ['https://twitter.com', 'fa fa-twitter']
+  - ['/feed', 'fa fa-rss']
