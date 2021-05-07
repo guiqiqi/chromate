@@ -1,0 +1,14 @@
+<section class="archive">
+    <ul class="archive-posts">
+        <% page.posts.each(function(post) { %>
+            <li class="archive-post">
+                <div class="archive-post-time">
+                    <%- date(post.date, theme.timeformat) %>
+                </div>
+                <a class="archive-post-title" href="<%- url_for(post.path) %>">
+                    <%= post.title %>
+                </a>
+            </li>
+        <% }); %>
+    </ul>
+</section>
