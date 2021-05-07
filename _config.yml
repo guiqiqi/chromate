@@ -8,3 +8,7 @@ navbar:
   - ['https://google.com', 'fa fa-google']
   - ['https://twitter.com', 'fa fa-twitter']
   - ['/feed', 'fa fa-rss']
+menubar:
+  - ['/about', 'About']
+  - ['/archives', 'Archives']
+logo: false

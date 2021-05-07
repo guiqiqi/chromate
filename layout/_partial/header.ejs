@@ -1,7 +1,17 @@
 <header class="header">
-    <div class="header-title">
-        <%= config.title %>
+    <div class="header-topbar">
+        <div class="header-title">
+            <%= config.title %>
+        </div>
+        <div class="header-menu">
+            <% for (let item of theme.menubar) { %>
+                <a href="<%= item[0] %>"><%= item[1] %></a>
+            <% } %> 
+        </div>
     </div>
+    <% if (theme.logo) { %>
+        <div class="header-logo" style="background-image: url('<%= theme.logo %>');"></div>
+    <% } %>  
     <div class="header-desc">
         <%= config.description %> 
     </div>
