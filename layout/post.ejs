@@ -2,10 +2,31 @@
     <!-- Post thumbnail with lazayload support -->
     <div class="post-thumbnail" style="background-image: url('<%= page.thumbnail %>');"></div>
 
+    <!-- Podcast Player using Shikwasa -->
+    <% if (page.podcast) { %> 
+        <div class="post-podcast-player"></div>
+        <script>
+            window.addEventListener("load", () => {
+                const player = new Shikwasa({
+                    container: () => document.querySelector('.post-podcast-player'),
+                    audio: {
+                        title: "<%= page.title %>",
+                        artist: "<%= page.podcast.author %>",
+                        cover: "<%= page.podcast.thumbnail %>",
+                        src: "<%= page.podcast.media %>"
+                    },
+                    fixed: {
+                        type: "static"
+                    }
+                });
+            }, false);
+        </script>
+    <% } %> 
+
     <!-- Post title and content -->
     <div class="post-meta">
         <div class="post-time">
-            <%- date(page.date, "MMM, D YYYY" ) %>
+            <%- date(page.date, "MMM, D YYYY") %>
         </div>
     </div>
     <h1 class="post-title"><%= page.title %></h1>

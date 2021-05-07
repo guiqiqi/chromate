@@ -24,14 +24,15 @@
 
             <!-- Post meta -->
             <div class="post-meta">
-                <% if (post.podcast && theme.podcast && post.duration) { %>
+                <% if (post.podcast && theme.podcast) { %>
                     <%
-                        const hour = Math.floor(post.duration / 3600);
-                        const minute = Math.floor((post.duration / 60) % 60);
-                        const second = Math.floor(post.duration % 60);
-                        const duration = hour + ':' + String(minute).padStart(2, '0') + ':' + String(second).padStart(2, '0');
+                        const duration = post.podcast.duration;
+                        const hour = Math.floor(duration / 3600);
+                        const minute = Math.floor((duration / 60) % 60);
+                        const second = Math.floor(duration % 60);
+                        const viewstr = hour + ':' + String(minute).padStart(2, '0') + ':' + String(second).padStart(2, '0');
                     %>
-                    <div class="post-duration"><%- duration %></div>
+                    <div class="post-duration"><%- viewstr %></div>
                 <% } %>
                 <div class="post-time">
                     <%- date(post.date, "MMM, D YYYY") %> 
