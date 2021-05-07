@@ -44,7 +44,32 @@
                     </div>
                 <% } %>
             </div>
-            
         </article>
     <% }) %>
+
+    <!-- Page navigation -->
+    <% if (page.prev || page.next) { %>
+        <div class="nav">
+            <% if (page.prev) { %>
+                <div class="nav-prev">
+                    <a href="<%- url_for(page.prev_link) %>" class="nav-link">
+                        <span class="nav-label">
+                            Prev
+                            <i class="fa fa-chevron-left"></i>
+                        </span>
+                    </a>
+                </div>
+            <% } %>
+            <% if (page.next) { %>
+                <div class="nav-next">  
+                    <a href="<%- url_for(page.next_link) %>" class="nav-link">
+                        <span class="nav-label">
+                            Next
+                            <i class="fa fa-chevron-right"></i>
+                        </span>
+                    </a>
+                </div>
+            <% } %>
+        </div>
+    <% } %>
 </section>
