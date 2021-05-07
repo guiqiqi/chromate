@@ -1,3 +1,5 @@
+logo: false
+timeformat: "MMM, D YYYY"
 podcast: true
 lazyload: true
 highlight:
@@ -11,4 +13,3 @@ navbar:
 menubar:
   - ['/about', 'About']
   - ['/archives', 'Archives']
-logo: false

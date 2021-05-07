@@ -35,7 +35,7 @@
                     <div class="post-duration"><%- viewstr %></div>
                 <% } %>
                 <div class="post-time">
-                    <%- date(post.date, "MMM, D YYYY") %> 
+                    <%- date(post.date, theme.timeformat) %> 
                 </div>
                 <% if (post.tags) { %> 
                     <div class="post-tags">
