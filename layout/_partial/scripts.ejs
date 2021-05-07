@@ -11,7 +11,6 @@
 <% } %>
 
 <!-- Darkmode support -->
-<link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma-prefers-dark" />
 <%- js('js/darkmode.js') %>
 <script>
     var darklistener = new DarkmodeListener();
@@ -25,18 +24,20 @@
     <link id="highlight-dark-theme" rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/highlightjs@9.16.2/styles/<%= theme.highlight.darkmode %>.min.css">
     <script>
-        const theme_selector = (mode) => {
-            if (mode === SystemDarkmodePrefrence.dark) {
-                document.getElementById("highlight-light-theme").setAttribute("disabled", "disabled");
-                document.getElementById("highlight-dark-theme").removeAttribute("disabled");
-            } else {
-                document.getElementById("highlight-dark-theme").setAttribute("disabled", "disabled");
-                document.getElementById("highlight-light-theme").removeAttribute("disabled");
-            }
-        };
-        theme_selector(darklistener.mode());
-        darklistener.add(theme_selector);
-        hljs.initHighlightingOnLoad();
+        window.addEventListener("load", () => {
+            const theme_selector = (mode) => {
+                if (mode === SystemDarkmodePrefrence.dark) {
+                    document.getElementById("highlight-light-theme").setAttribute("disabled", "disabled");
+                    document.getElementById("highlight-dark-theme").removeAttribute("disabled");
+                } else {
+                    document.getElementById("highlight-dark-theme").setAttribute("disabled", "disabled");
+                    document.getElementById("highlight-light-theme").removeAttribute("disabled");
+                }
+            };
+            theme_selector(darklistener.mode());
+            darklistener.add(theme_selector);
+            hljs.initHighlightingOnLoad();
+        }, false);
     </script>
 <% } %>
 
