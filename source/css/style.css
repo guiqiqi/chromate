@@ -1,3 +1,19 @@
 pre {
     background-color: none !important;
 }
+
+@media (prefers-color-scheme: dark) {
+    * {
+        transition: backgourd-color 0.5s;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .navbar-menu {
+        box-shadow: 0 8px 16px -8px rgb(10 10 10 / 10%) !important;
+    }
+}
+
+.navbar-brand .navbar-item:hover {
+    background-color: inherit !important;
+}
