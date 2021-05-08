@@ -1,4 +1,5 @@
 <!-- Lazyload support -->
+<%- js('js/script.js') %>
 <% if (theme.lazyload) { %>
     <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js"></script>
     <script>
@@ -9,12 +10,6 @@
         };
     </script>
 <% } %>
-
-<!-- Darkmode support -->
-<%- js('js/darkmode.js') %>
-<script>
-    var darklistener = new DarkmodeListener();
-</script>
 
 <!-- Highlight.js support -->
 <% if (theme.highlight.enable === true) { %> 
