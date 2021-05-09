@@ -22,7 +22,17 @@ pre {
 }
 
 .post-entry {
-    margin-bottom: 3rem !important;
+    margin-bottom: 1.5rem !important;
+    margin-top: 1.5rem !important;
+    transition: box-shadow 0.1s;
+}
+
+.post-entry:hover {
+    box-shadow: 0 1em 2em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+}
+
+.post-card {
+    margin-top: 1.5rem !important;
 }
 
 .pagination-bar {
