@@ -16,7 +16,7 @@ window.addEventListener("load", function () {
         });
     }
     // Add header hover page class changer
-    darklistener.add(function (mode) {
+    var colorman = function (mode) {
         var page = document.getElementById("header-page");
         if (mode === SystemDarkmodePrefrence.dark) {
             page === null || page === void 0 ? void 0 : page.classList.add("is-dark");
@@ -26,7 +26,9 @@ window.addEventListener("load", function () {
             page === null || page === void 0 ? void 0 : page.classList.add("is-light");
             page === null || page === void 0 ? void 0 : page.classList.remove("is-dark");
         }
-    });
+    };
+    colorman(darklistener.mode());
+    darklistener.add(colorman);
 });
 /* Darkmode listener */
 var SystemDarkmodePrefrence;

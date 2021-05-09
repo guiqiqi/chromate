@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
     }
 
     // Add header hover page class changer
-    darklistener.add((mode) => {
+    const colorman = (mode: SystemDarkmodePrefrence) => {
         const page = document.getElementById("header-page");
         if (mode === SystemDarkmodePrefrence.dark) {
             page?.classList.add("is-dark");
@@ -26,7 +26,9 @@ window.addEventListener("load", () => {
             page?.classList.add("is-light");
             page?.classList.remove("is-dark");
         }
-    });
+    }
+    colorman(darklistener.mode());
+    darklistener.add(colorman);
 });
 
 /* Darkmode listener */
