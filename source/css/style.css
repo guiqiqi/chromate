@@ -29,3 +29,8 @@ pre {
     padding-left: 0.25rem;
     padding-right: 0.25rem;
 }
+
+.footer {
+    padding: 1rem 1rem 1rem;
+    background-color: transparent;
+}

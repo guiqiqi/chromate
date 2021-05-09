@@ -1,9 +1,12 @@
 <footer class="footer">
-    <div class="footer-copyright">
-        Copyright © <%= date(Date.now(), 'YYYY') %> <a href="<%= url_for('/') %>"><%= config.title %></a>
-    </div>
-    <div class="footer-power">
-        <p>Powered by <a href="https://hexo.io" target="_blank">Hexo</a> | Theme - <a href="https://github.com/guiqiqi/Chromate"
-                target="_blank">Chromate</a></p>
+    <div class="content has-text-centered has-text-grey">
+        <div class="footer-copyright">
+            Copyright © <%= date(Date.now(), 'YYYY' ) %> <%= config.title %>
+        </div>
+        <div class="footer-power">
+            <p>Powered by <a class="has-text-black" href="https://hexo.io" target="_blank">Hexo</a> 
+            <i class="fa fa-heart has-text-danger"></i>
+            Theme <a class="has-text-black" href="https://github.com/guiqiqi/chromate">Chromate</a>
+        </div>
     </div>
 </footer>
