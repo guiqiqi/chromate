@@ -7,8 +7,8 @@ highlight:
   lightmode: 'atom-one-light'
   darkmode: 'atom-one-dark'
 navbar:
-  - ['https://init.blog', 'fa fa-cube']
-  - ['https://github.com/guiqiqi', 'fa fa-github']
+  - ['mailto:privet@utc3.live', 'fa fa-paper-plane']
+  - ['https://github.com/guiqiqi/chromate', 'fa fa-github']
   - ['/feed', 'fa fa-rss']
 menubar:
   - ['/about', '关于']
