@@ -19,7 +19,7 @@ pre {
         padding-top: 0px !important;
     }
     .post-card {
-        padding: 0 0 0 0 !important; 
+        margin: 0 0 0 0 !important; 
     }
 }
 
@@ -28,7 +28,7 @@ pre {
 }
 
 .post-card {
-    padding: 0 1rem 1rem 1rem;
+    margin: 0 1rem 0rem 1rem;
 }
 
 .navbar-brand .navbar-item:hover {
