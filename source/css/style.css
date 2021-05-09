@@ -20,3 +20,12 @@ pre {
 .navbar-brand .navbar-item:hover {
     background-color: inherit !important;
 }
+
+.post-entry {
+    margin-bottom: 3rem !important;
+}
+
+.pagination-bar {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
