@@ -11,5 +11,5 @@ navbar:
   - ['https://github.com/guiqiqi', 'fa fa-github']
   - ['/feed', 'fa fa-rss']
 menubar:
-  - ['/about', 'About']
-  - ['/archives', 'Archives']
+  - ['/about', '关于']
+  - ['/archives', '归档']
