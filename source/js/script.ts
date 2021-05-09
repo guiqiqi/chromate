@@ -18,16 +18,21 @@ window.addEventListener("load", () => {
 
     // Add header hover page class changer
     const colorman = (mode: SystemDarkmodePrefrence) => {
-        const page = document.getElementById("header-page");
-        if (mode === SystemDarkmodePrefrence.dark) {
-            page?.classList.add("is-dark");
-            page?.classList.remove("is-light");
-        } else {
-            page?.classList.add("is-light");
-            page?.classList.remove("is-dark");
-        }
+        let clsname: string = ".is-light";
+        if (darklistener.mode() === SystemDarkmodePrefrence.dark)
+            clsname = ".is-dark";
+        const elements: Element[] = Array.prototype.slice.call(
+            document.querySelectorAll(clsname), 0);
+        elements.forEach((element) => {
+            if (mode === SystemDarkmodePrefrence.dark) {
+                element?.classList.add("is-dark");
+                element?.classList.remove("is-light");
+            } else {
+                element?.classList.add("is-light");
+                element?.classList.remove("is-dark");
+            }
+        })
     }
-    colorman(darklistener.mode());
     darklistener.add(colorman);
 });
 
@@ -61,6 +66,7 @@ class DarkmodeListener {
     }
 
     public add(callback: (mode: SystemDarkmodePrefrence) => void): void {
+        callback(this._mode);
         this._handlers.push(callback);
     }
 

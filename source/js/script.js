@@ -17,17 +17,21 @@ window.addEventListener("load", function () {
     }
     // Add header hover page class changer
     var colorman = function (mode) {
-        var page = document.getElementById("header-page");
-        if (mode === SystemDarkmodePrefrence.dark) {
-            page === null || page === void 0 ? void 0 : page.classList.add("is-dark");
-            page === null || page === void 0 ? void 0 : page.classList.remove("is-light");
-        }
-        else {
-            page === null || page === void 0 ? void 0 : page.classList.add("is-light");
-            page === null || page === void 0 ? void 0 : page.classList.remove("is-dark");
-        }
+        var clsname = ".is-light";
+        if (darklistener.mode() === SystemDarkmodePrefrence.dark)
+            clsname = ".is-dark";
+        var elements = Array.prototype.slice.call(document.querySelectorAll(clsname), 0);
+        elements.forEach(function (element) {
+            if (mode === SystemDarkmodePrefrence.dark) {
+                element === null || element === void 0 ? void 0 : element.classList.add("is-dark");
+                element === null || element === void 0 ? void 0 : element.classList.remove("is-light");
+            }
+            else {
+                element === null || element === void 0 ? void 0 : element.classList.add("is-light");
+                element === null || element === void 0 ? void 0 : element.classList.remove("is-dark");
+            }
+        });
     };
-    colorman(darklistener.mode());
     darklistener.add(colorman);
 });
 /* Darkmode listener */
@@ -57,6 +61,7 @@ var DarkmodeListener = /** @class */ (function () {
         media.addEventListener("change", callback);
     };
     DarkmodeListener.prototype.add = function (callback) {
+        callback(this._mode);
         this._handlers.push(callback);
     };
     DarkmodeListener.prototype.mode = function () {
