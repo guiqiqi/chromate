@@ -13,48 +13,46 @@
                 </div>
             <% } %>
             <div class="card-content">
-                <section class="section">
-                    <h2 class="title has-text-centered">
-                        <%= page.title %>
-                    </h2>
-                    <% if (page.podcast) { %>
-                        <div class="post-podcast-player"></div>
-                        <script>
-                            window.addEventListener("load", () => {
-                                const player = new Shikwasa({
-                                    container: () => document.querySelector('.post-podcast-player'),
-                                    audio: {
-                                        title: "<%= page.title %>",
-                                        artist: "<%= page.podcast.author %>",
-                                        cover: "<%= page.podcast.cover %>",
-                                        src: "<%= page.podcast.media %>"
-                                    },
-                                    fixed: {
-                                        type: "auto",
-                                        position: "bottom"
-                                    },
-                                    themeColor: "red"
-                                });
-                            }, false);
-                        </script>
-                    <% } %>
-                    <section class="content post-content is-size-6">
-                        <%- page.content %>
-                    </section>
-                    <div class="level">
-                        <div class="level-left">
-                            <div class="level-item">
-                                <% if (page.tags) { %>
-                                    <div class="tags">
-                                        <% (page.tags).forEach(function(item) { %>
-                                            <span class="tag"># <%= item.name %></span>
-                                            <% }); %>
-                                    </div>
-                                <% } %>
-                            </div>
+                <h2 class="title has-text-centered">
+                    <%= page.title %>
+                </h2>
+                <% if (page.podcast) { %>
+                    <div class="post-podcast-player"></div>
+                    <script>
+                        window.addEventListener("load", () => {
+                            const player = new Shikwasa({
+                                container: () => document.querySelector('.post-podcast-player'),
+                                audio: {
+                                    title: "<%= page.title %>",
+                                    artist: "<%= page.podcast.author %>",
+                                    cover: "<%= page.podcast.cover %>",
+                                    src: "<%= page.podcast.media %>"
+                                },
+                                fixed: {
+                                    type: "auto",
+                                    position: "bottom"
+                                },
+                                themeColor: "red"
+                            });
+                        }, false);
+                    </script>
+                <% } %>
+                <section class="content post-content is-size-6">
+                    <%- page.content %>
+                </section>
+                <div class="level">
+                    <div class="level-left">
+                        <div class="level-item">
+                            <% if (page.tags) { %>
+                                <div class="tags">
+                                    <% (page.tags).forEach(function(item) { %>
+                                        <span class="tag"># <%= item.name %></span>
+                                        <% }); %>
+                                </div>
+                            <% } %>
                         </div>
                     </div>
-                </section>
+                </div>                
             </div>
         </div>
     </div>

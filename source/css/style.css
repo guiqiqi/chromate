@@ -15,24 +15,34 @@ pre {
     .navbar-menu {
         box-shadow: 0 8px 16px -8px rgb(10 10 10 / 10%) !important;
     }
+    .post-content {
+        padding-top: 0px !important;
+    }
+    .post-card {
+        padding: 0 0 0 0 !important; 
+    }
+}
+
+.post-content {
+    padding-top: 1.5rem;
+}
+
+.post-card {
+    padding: 0 1rem 1rem 1rem;
 }
 
 .navbar-brand .navbar-item:hover {
     background-color: inherit !important;
 }
 
-.post-entry {
+.entry {
     margin-bottom: 1.5rem !important;
     margin-top: 1.5rem !important;
     transition: box-shadow 0.1s;
 }
 
-.post-entry:hover {
+.entry:hover {
     box-shadow: 0 1em 2em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
-}
-
-.post-card {
-    margin-top: 1.5rem !important;
 }
 
 .pagination-bar {
@@ -43,8 +53,4 @@ pre {
 .footer {
     padding: 1rem 1rem 1rem;
     background-color: transparent;
-}
-
-.post-content {
-    padding-top: 2rem;
 }
