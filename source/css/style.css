@@ -34,3 +34,7 @@ pre {
     padding: 1rem 1rem 1rem;
     background-color: transparent;
 }
+
+.post-content {
+    padding-top: 2rem;
+}
