@@ -6,6 +6,9 @@ pre {
     * {
         transition: backgourd-color 0.5s;
     }
+    .card {
+        box-shadow: none !important;
+    }
 }
 
 @media screen and (max-width: 1023px) {
