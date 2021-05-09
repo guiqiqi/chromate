@@ -96,14 +96,14 @@
         <div class="column is-8 is-offset-2">
             <nav class="pagination is-centered" role="navigation" aria-label="pagination">
                 <% if (page.prev) { %>
-                    <a class="button is-light" href="<%- url_for(page.prev_link) %>"><%- __("prev") %></a>
+                    <a class="button auto-dark" href="<%- url_for(page.prev_link) %>"><%- __("prev") %></a>
                 <% } else { %>
-                    <a class="button is-disabled is-light" disabled><%- __("prev") %></a>
+                    <a class="button is-disabled auto-dark" disabled><%- __("prev") %></a>
                 <% } %> 
                 <% if (page.next) { %>
-                    <a class="button is-light" href="<%- url_for(page.next_link) %>"><%- __("next") %></a>
+                    <a class="button auto-dark" href="<%- url_for(page.next_link) %>"><%- __("next") %></a>
                 <% } else { %>
-                    <a class="button is-disabled is-light" disabled><%- __("next") %></a>
+                    <a class="button is-disabled auto-dark" disabled><%- __("next") %></a>
                 <% } %> 
             </nav>
         </div>

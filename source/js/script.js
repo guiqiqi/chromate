@@ -17,9 +17,7 @@ window.addEventListener("load", function () {
     }
     // Add header hover page class changer
     var colorman = function (mode) {
-        var clsname = ".is-light";
-        if (darklistener.mode() === SystemDarkmodePrefrence.dark)
-            clsname = ".is-dark";
+        var clsname = ".auto-dark";
         var elements = Array.prototype.slice.call(document.querySelectorAll(clsname), 0);
         elements.forEach(function (element) {
             if (mode === SystemDarkmodePrefrence.dark) {
