@@ -10,13 +10,13 @@ highlight:
 navbar:
   - ['mailto:privet@utc3.live', 'fa fa-paper-plane']
   - ['https://github.com/guiqiqi/chromate', 'fa fa-github']
-  - ['/feed/', 'fa fa-rss']
+  - ['/feed.rss', 'fa fa-rss']
 menubar:
   - ['/about/', '关于']
   - ['/archives/', '归档']
 rss:
   enable: true
-  path: '/feed/'
+  path: '/feed.rss'
   config:
     email: 'privet@utc3.live'
     category: Education

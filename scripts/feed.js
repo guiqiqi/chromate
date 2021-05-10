@@ -1,6 +1,5 @@
 'use strict';
 
-const xml = require("xml");
 const podcast = require("podcast");
 
 hexo.extend.generator.register("feed", (locals) => {
