@@ -2,6 +2,7 @@ logo: false
 timeformat: "MMM, D YYYY"
 podcast: true
 lazyload: true
+copyright: 'All rights reserved.'
 highlight:
   enable: true
   lightmode: 'atom-one-light'
@@ -9,7 +10,14 @@ highlight:
 navbar:
   - ['mailto:privet@utc3.live', 'fa fa-paper-plane']
   - ['https://github.com/guiqiqi/chromate', 'fa fa-github']
-  - ['/feed', 'fa fa-rss']
+  - ['/feed/', 'fa fa-rss']
 menubar:
-  - ['/about', '关于']
-  - ['/archives', '归档']
+  - ['/about/', '关于']
+  - ['/archives/', '归档']
+rss:
+  enable: true
+  path: '/feed/'
+  config:
+    email: 'privet@utc3.live'
+    category: Education
+    explicit: No

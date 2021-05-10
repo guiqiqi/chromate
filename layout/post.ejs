@@ -24,9 +24,9 @@
                                 container: () => document.querySelector('.post-podcast-player'),
                                 audio: {
                                     title: "<%= page.title %>",
-                                    artist: "<%= page.podcast.author %>",
+                                    artist: "<%= page.podcast.authors %>",
                                     cover: "<%= page.podcast.cover %>",
-                                    src: "<%= page.podcast.media %>"
+                                    src: "<%= page.podcast.media.url %>"
                                 },
                                 fixed: {
                                     type: "auto",
