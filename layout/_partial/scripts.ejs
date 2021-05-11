@@ -33,11 +33,12 @@
     </script>
 <% } %>
 
-<!-- Font Awesome delay loading -->
-<link media="none" onload="media='all'" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">
-
 <!-- Shikwasa Player support -->
 <% if (is_post() && theme.podcast && page.podcast) { %>
     <script defer src="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.js"></script>
     <link media="none" onload="media='all'" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.css">
 <% } %>
+
+<!-- Font Awesome delay loading -->
+<link rel="preload" as="style" onload="this.rel='stylesheet'" rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css">

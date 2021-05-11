@@ -47,9 +47,12 @@
                             const favicon = mapping[1];
                             let outter = link.startsWith("https://") ? true : false;
                         %>
-                        <a class="icon" href="<%= link %>" target="<%= outter ? '_blank' : '_self' %>">
-                            <i class="<%= favicon %>"></i>
-                        </a>
+                        <% if (outter) { %>
+                            <a class="icon" href="<%= link %>" target="_blank" rel="noopener noreferrer">
+                        <% } else { %>  
+                            <a class="icon" href="<%= link %>">
+                        <% } %>
+                        <i class="<%= favicon %>"></i></a>
                     <% } %>
                 </ul>
             </p>
