@@ -1,4 +1,5 @@
 logo: false
+favicon: false
 timeformat: "MMM, D YYYY"
 podcast: true
 lazyload: true
@@ -19,5 +20,5 @@ rss:
   path: '/feed.rss'
   config:
     email: 'privet@utc3.live'
-    category: Education
-    explicit: No
+    category: 'Education'
+    explicit: false
