@@ -32,6 +32,19 @@ window.addEventListener("load", () => {
         })
     }
     darklistener.add(colorman);
+
+    // Add logo color selector
+    const logoman = (mode: SystemDarkmodePrefrence) => {
+        const logo = document.getElementById("logo");
+        const darksrc = logo?.getAttribute("data-src-darkmode");
+        const lightsrc = logo?.getAttribute("data-src-lightmode");
+        if (!logo || !darksrc || !lightsrc)
+            return;
+        let src = (mode === SystemDarkmodePrefrence.dark) ? darksrc : lightsrc;
+        logo.setAttribute("src", src);
+    }
+    darklistener.add(logoman);
+    
 });
 
 /* Darkmode listener */

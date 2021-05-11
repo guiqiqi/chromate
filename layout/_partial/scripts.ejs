@@ -1,13 +1,17 @@
 <!-- Lazyload support -->
 <%- js('js/script.min.js') %>
 <% if (theme.lazyload) { %>
-    <script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js"></script>
+    <script async defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.min.js"></script>
     <script>
         window.lazyLoadOptions = {
             elements_selector: ".lazy",
             threshold: 0,
             effect: "fadeIn"
         };
+        window.addEventListener("LazyLoad::Initialized", 
+        function (event) {
+            window.lazyLoader = event.detail.instance;
+        }, false);
     </script>
 <% } %>
 

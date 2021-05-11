@@ -31,6 +31,17 @@ window.addEventListener("load", function () {
         });
     };
     darklistener.add(colorman);
+    // Add logo color selector
+    var logoman = function (mode) {
+        var logo = document.getElementById("logo");
+        var darksrc = logo === null || logo === void 0 ? void 0 : logo.getAttribute("data-src-darkmode");
+        var lightsrc = logo === null || logo === void 0 ? void 0 : logo.getAttribute("data-src-lightmode");
+        if (!logo || !darksrc || !lightsrc)
+            return;
+        var src = (mode === SystemDarkmodePrefrence.dark) ? darksrc : lightsrc;
+        logo.setAttribute("src", src);
+    };
+    darklistener.add(logoman);
 });
 /* Darkmode listener */
 var SystemDarkmodePrefrence;

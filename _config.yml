@@ -1,4 +1,7 @@
-logo: false
+logo:
+  enable: false
+  lightmode: null
+  darkmode: null
 favicon: false
 timeformat: "MMM, D YYYY"
 podcast: true
@@ -9,12 +12,12 @@ highlight:
   lightmode: 'atom-one-light'
   darkmode: 'atom-one-dark'
 navbar:
-  - ['mailto:privet@utc3.live', 'fa fa-paper-plane']
-  - ['https://github.com/guiqiqi/chromate', 'fa fa-github']
-  - ['/feed.rss', 'fa fa-rss']
+  - ['mailto:privet@utc3.live', 'fa fa-paper-plane', '']
+  - ['https://github.com/guiqiqi/chromate', 'fa fa-github', '']
+  - ['/feed.rss', 'fa fa-rss', '']
 menubar:
-  - ['/about/', '关于']
-  - ['/archives/', '归档']
+  - ['/about/', 'About']
+  - ['/archives/', 'Archives']
 rss:
   enable: true
   path: '/feed.rss'

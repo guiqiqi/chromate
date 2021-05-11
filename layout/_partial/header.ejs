@@ -3,8 +3,8 @@
         <header class="navbar" aria-label="main navigation">
             <div class="container">
                 <div class="navbar-brand header-title">
-                    <a class="navbar-item is-uppercase has-text-weight-semibold" href="<%= url_for('/') %>">
-                            <%= config.title %>
+                    <a class="navbar-item is-uppercase has-text-weight-semibold" href="<%= url_for('/') %>">                        
+                        <%= config.title %>
                     </a>
                     <a role="button" class="navbar-burger" data-target="header-menu" aria-label="menu" aria-expanded="false">
                         <span aria-hidden="true"></span>
@@ -28,33 +28,40 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <p class="title">
-                <% if (theme.logo) { %>
-                    <span class="header-logo" style="background-image: url('<%= theme.logo %>');">
-                    </span>
-                <% } else { %>
-                    <span class="header-title is-size-2 is-family-monospace is-uppercase">
+                <span class="is-size-2 is-family-monospace is-uppercase">
+                    <% if (theme.logo.enable) { %>
+                        <img id="logo" data-src-lightmode="<%= theme.logo.lightmode %>" 
+                             data-src-darkmode="<%= theme.logo.darkmode %>" style="max-width: 200px;" />
+                    <% } else { %>
                         <%= config.title %>
-                    </span>
-                <% } %> 
+                    <% } %>
+                </span>
             </p>
             <p class="subtitle is-size-6">
                 <%- config.description %>
-                <ul class="header-navbar">
+                <div>
                     <% for (let index in theme.navbar) { %>
                         <% 
                             const mapping = theme.navbar[index];
                             const link = mapping[0];
                             const favicon = mapping[1];
+                            const description = mapping[2];
                             let outter = link.startsWith("https://") ? true : false;
                         %>
                         <% if (outter) { %>
-                            <a class="icon" href="<%= link %>" target="_blank" rel="noopener noreferrer">
+                            <a href="<%= link %>" target="_blank" rel="noopener noreferrer">
                         <% } else { %>  
-                            <a class="icon" href="<%= link %>">
+                            <a href="<%= link %>">
                         <% } %>
-                        <i class="<%= favicon %>"></i></a>
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="<%= favicon %>"></i>
+                                </span>
+                                <span><%= description %></span>
+                            </span>
+                        </a>
                     <% } %>
-                </ul>
+                </div>
             </p>
         </div>
     </div>
