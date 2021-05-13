@@ -8,7 +8,7 @@ hexo.extend.generator.register("feed", (locals) => {
     const config = hexo.config;
     const theme = hexo.theme.config;
     const urler = hexo.extend.helper.get("url_for").bind(hexo);
-    const strip = hexo.extend.helper.get("strip_html").bind(hexo);
+    const hstrip = hexo.extend.helper.get("strip_html").bind(hexo);
     if (!theme.rss || !theme.rss.enable) return;
 
     // Render for site config
@@ -30,12 +30,12 @@ hexo.extend.generator.register("feed", (locals) => {
         }
     });
 
-    // Rendor for podcasts
+    // Rendering for podcasts
     locals.posts.sort('date', -1).each(function (post) {
         if (!post.podcast) return;
         feed.addItem({
             title: post.title,
-            description: post.excerpt,
+            description: post.content,
             url: config.url + urler(post.path),
             guid: config.url + urler(post.path),
             author: post.podcast.authors.join(', '),
@@ -48,8 +48,7 @@ hexo.extend.generator.register("feed", (locals) => {
             itunesAuthor: post.podcast.authors.join(', '),
             itunesExplicit: theme.rss.config.explicit,
             itunesSubtitle: post.podcast.subtitle,
-            itunesSummary: strip(post.excerpt),
-            itunesCategory: theme.rss.config.category,
+            itunesSummary: hstrip(post.excerpt),
             itunesDuration: post.podcast.duration
         });
     });
