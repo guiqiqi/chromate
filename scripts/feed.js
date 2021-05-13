@@ -1,7 +1,5 @@
 'use strict';
 
-const podcast = require("podcast");
-
 hexo.extend.generator.register("feed", (locals) => {
 
     // Load config
@@ -10,6 +8,8 @@ hexo.extend.generator.register("feed", (locals) => {
     const urler = hexo.extend.helper.get("url_for").bind(hexo);
     const hstrip = hexo.extend.helper.get("strip_html").bind(hexo);
     if (!theme.rss || !theme.rss.enable) return;
+
+    const podcast = require("podcast");
 
     // Render for site config
     const feed = new podcast({
@@ -33,9 +33,10 @@ hexo.extend.generator.register("feed", (locals) => {
     // Rendering for podcasts
     locals.posts.sort('date', -1).each(function (post) {
         if (!post.podcast) return;
+        let description = post.content.replaceAll(/onclick=".*?"/gi, '');
         feed.addItem({
             title: post.title,
-            description: post.content,
+            description: description.replace(/>\s+</g, '><', ''),
             url: config.url + urler(post.path),
             guid: config.url + urler(post.path),
             author: post.podcast.authors.join(', '),

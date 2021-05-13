@@ -31,6 +31,7 @@ hexo.extend.tag.register('timeline', function (_args) {
     let page = this;
     if (!(page.podcast && page.podcast.chapters))
         return;
+    const urler = hexo.extend.helper.get("full_url_for").bind(hexo);
     return ejs.render(`
     <ul>
         <% (page.podcast.chapters).forEach(function(item) { %>
@@ -42,9 +43,13 @@ hexo.extend.tag.register('timeline', function (_args) {
                 const second = Math.floor(timestamp % 60);
                 const viewstr = String(hour).padStart(2, '0') + ':' + String(minute).padStart(2, '0') + ':' + String(second).padStart(2, '0');
             %>
-            <li class="is-family-monospace"><a href="#t=<%= viewstr %>" onclick="eval('player.seek(<%= timestamp %>)')"><%= viewstr %></a> <%= title %></li>
+            <li class="is-family-monospace">
+                <a href="<%= urler(page.path) %>#t=<%= viewstr %>" onclick="eval('player.seek(<%= timestamp %>)')">
+                    <%= viewstr %>
+                </a><%= title %>
+            </li>
         <% }); %>
     </ul>
     `
-    , {page: page});
+    , {page: page, urler: urler});
 })
