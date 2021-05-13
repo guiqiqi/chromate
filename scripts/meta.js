@@ -44,7 +44,7 @@ hexo.extend.tag.register('timeline', function (_args) {
                 const viewstr = String(hour).padStart(2, '0') + ':' + String(minute).padStart(2, '0') + ':' + String(second).padStart(2, '0');
             %>
             <li class="is-family-monospace">
-                <a href="<%= urler(page.path) %>#t=<%= viewstr %>" onclick="eval('player.seek(<%= timestamp %>)')">
+                <a href="#t=<%= viewstr %>" onclick="eval('player.seek(<%= timestamp %>)')">
                     <%= viewstr %>
                 </a><%= title %>
             </li>
