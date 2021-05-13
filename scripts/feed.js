@@ -34,7 +34,7 @@ hexo.extend.generator.register("feed", (locals) => {
     locals.posts.sort('date', -1).each(function (post) {
         if (!post.podcast) return;
         let description = post.content.replace(/onclick=".*?"/gi, '')
-            .replace(/class=".*?"/gi, '').replace(/href=#".*?"/gi, '')
+            .replace(/class=".*?"/gi, '').replace(/href="#.*?"/gi, '')
             .replace(/id=".*?"/gi, '').replace(/rel=".*?"/gi, '')
             .replace(/title=".*?"/gi, '').replace(/\n/g, "")
             .replace(/\s+/g, ' ').trim();
