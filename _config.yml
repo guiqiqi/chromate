@@ -23,5 +23,8 @@ rss:
   path: '/feed.rss'
   config:
     email: 'privet@utc3.live'
-    category: 'Education'
+    category: {
+      'Education': ['How To', 'Language Learning'],
+      'Technology': []
+    }
     explicit: false
