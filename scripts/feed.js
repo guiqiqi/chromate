@@ -18,7 +18,7 @@ hexo.extend.generator.register("feed", (locals) => {
         copyright: theme.copyright,
         language: config.language.slice(0, 2),
         siteUrl: config.url,
-        imageUrl: theme.logo,
+        imageUrl: theme.logo.lightmode,
         itunesSubtitle: config.subtitle,
         itunesSummary: config.description,
         itunesAuthor: config.author,
