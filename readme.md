@@ -1,4 +1,4 @@
-[中文版本](https://github.com/guiqiqi/Chromate/readme-zh.md)
+[中文版本](https://github.com/guiqiqi/chromate/blob/main/readme-zh.md)
 
 # Theme Chromate
 

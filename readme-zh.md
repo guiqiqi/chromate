@@ -1,4 +1,4 @@
-[English Version](https://github.com/guiqiqi/Chromate/readme.md)
+[English Version](https://github.com/guiqiqi/chromate/blob/main/readme.md)
 
 # Chromate 主题
 
