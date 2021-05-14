@@ -1,23 +1,93 @@
+# Fill in your logo address (darkmode and lightmode) here
+# Dont forget to enable it.
+# ------------------------------------------------------------
+# 在这里填入你的 Logo 地址 - 包括黑暗/白天模式
+# 不要忘记把 enable 改成 true 哦～
 logo:
   enable: false
   lightmode: null
   darkmode: null
+
+# Favicon file link
+# ------------------------------------------------------------
+# Favicon 文件地址
 favicon: false
+
+# Datetime format for most of positions
+# ------------------------------------------------------------
+# 站点内大部分日期的显示格式
 timeformat: "MMM, D YYYY"
+
+# Enable Podcast support or not
+# 是否启用 Podcast 支持
 podcast: true
+
+# Enable Lazyload support or not
+# ------------------------------------------------------------
+# 是否启用图片懒加载
 lazyload: true
+
+# Your Copyright String will be shown in footer
+# ------------------------------------------------------------
+# 你的版权信息会显示在页脚
 copyright: 'All rights reserved.'
+
+# Enable code auto Highlight or not
+# Then select one lightmode and darkmode style here:
+# https://github.com/highlightjs/highlight.js/tree/main/src/styles
+# Please enable 'highlight' in your project _config.yml with 'hljs' field set to true!
+# ------------------------------------------------------------
+# 是否启用代码渲染
+# 之后给代码渲染选择一个夜间/白天模式主题：
+# https://github.com/highlightjs/highlight.js/tree/main/src/styles
+# 最后，在项目的 _config.yml 中打开 highlight 功能并把 hljs 设置为 true！
 highlight:
   enable: true
   lightmode: 'atom-one-light'
   darkmode: 'atom-one-dark'
+
+# Navbar will be shown below your logo with some favicons
+# You can select your icons with font-awesome 5
+# Config format:
+#   ['Link Address', 'Icon Class', 'Text After Icon']
+# ------------------------------------------------------------
+# Navbar 会展示在页面头部的 Logo 下方
+# 你可以去 Font Awesome 5 上面选一些好看的图标
+# 配置格式：
+#   ['链接地址', '图标类', '图标之后的文字']
 navbar:
   - ['mailto:privet@utc3.live', 'fa fa-paper-plane', '']
   - ['https://github.com/guiqiqi/chromate', 'fa fa-github', '']
   - ['/feed.rss', 'fa fa-rss', '']
+
+# Menubar and its texts
+# ------------------------------------------------------------
+# 菜单栏的地址和文字
 menubar:
   - ['/about/', 'About']
   - ['/archives/', 'Archives']
+
+# RSS auto generation configuration
+#   enable: true or false
+#   path: feeding path
+#   config:
+#     email: your podcast contact email
+#     category: {
+#       'Apple Podcast Category name': ['Subcategories', ...],
+#       ...
+#     }
+#     explicit: using true if your podcast content is explicit
+# ------------------------------------------------------------
+# RSS 自动生成器配置
+#   enable: 启用为 true
+#   path: RSS 订阅地址
+#   config:
+#     email: 你的 Podcast 联系邮箱
+#     category: {
+#       'Apple Podcast 分类名': ['子分类列表', ...],
+#       ...
+#     }
+#     explicit: 如果你的播客有羞羞的内容，那么改成 true
 rss:
   enable: true
   path: '/feed.rss'

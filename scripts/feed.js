@@ -27,8 +27,6 @@ hexo.extend.generator.register("feed", (locals) => {
         categories.push(category);
     });
 
-    console.log(categories);
-
     // Render for site config
     const feed = new podcast({
         title: config.title,
