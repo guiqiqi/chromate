@@ -17,16 +17,43 @@
                     <%= page.title %>
                 </h2>
                 <% if (page.podcast) { %>
+                    <script>let chapters = [];</script>
                     <div class="post-podcast-player"></div>
+                        <% if (page.podcast.chapters) { %>
+                            <%
+                                let final = page.podcast.duration;
+                                let timestamps = [];
+                                let data = page.podcast.chapters;
+                                let chapters = [];
+                                (data).forEach((chapter) => {
+                                    timestamps.push(chapter[1]);
+                                });
+                                timestamps.push(final);
+                                for (let index = 0; index < timestamps.length - 1; index++) {
+                                    let start = timestamps[index];
+                                    let end = timestamps[index + 1];
+                                    chapters.push({
+                                        title: data[index][0],
+                                        startTime: start, endTime: end
+                                    });
+                                };
+                            %>
+                            <script>
+                                chapters = JSON.parse('<%- JSON.stringify(chapters) %>');
+                            </script>
+                        <% } %>
                     <script>
                         window.addEventListener("load", () => {
+                            if (chapters !== [])
+                                Shikwasa.use(Chapter);
                             const player = new Shikwasa({
                                 container: () => document.querySelector('.post-podcast-player'),
                                 audio: {
                                     title: "<%= page.title %>",
                                     artist: "<%= page.podcast.authors %>",
                                     cover: "<%= page.podcast.cover %>",
-                                    src: "<%= page.podcast.media.url %>"
+                                    src: "<%= page.podcast.media.url %>",
+                                    chapters: chapters
                                 },
                                 fixed: {
                                     type: "auto",

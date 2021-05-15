@@ -41,6 +41,11 @@
 <% if (is_post() && theme.podcast && page.podcast) { %>
     <script defer src="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.js"></script>
     <link media="none" onload="media='all'" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.min.css">
+    <% if (page.podcast.chapters) { %>
+        <script defer src="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.chapter.min.js"></script>
+        <link media="none" onload="media='all'" rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/shikwasa/dist/shikwasa.chapter.min.css">
+    <% } %>  
 <% } %>
 
 <!-- Font Awesome delay loading -->
