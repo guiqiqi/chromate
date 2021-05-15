@@ -11,6 +11,9 @@ pre {
         box-shadow: none!important;
         background-color: #121212!important
     }
+    img:not([src*=".svg"]) {
+        filter: brightness(.7) contrast(1.2);
+    }
 }
 
 @media screen and (max-width:1023px) {
