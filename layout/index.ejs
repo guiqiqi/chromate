@@ -31,20 +31,41 @@
 
                                 <!-- Podcast duration with post date -->
                                 <% if (post.podcast && theme.podcast) { %>
-                                    <div class="tags has-addons">
-                                        <%
-                                            const duration = post.podcast.duration;
-                                            const hour = Math.floor(duration / 3600);
-                                            const minute = Math.floor((duration / 60) % 60);
-                                            const second = Math.floor(duration % 60);
-                                            const viewstr = hour + ':' + String(minute).padStart(2, '0') + ':' + String(second).padStart(2, '0');
-                                        %>
-                                        <span class="tag is-danger"><%- viewstr %></span>
-                                        <span class="tag"><%- date(post.date, theme.timeformat) %></span>
+                                    <div class="field is-grouped is-grouped-multiline">
+                                        <div class="control">
+                                            <div class="tags has-addons">
+                                                <%
+                                                    const duration = post.podcast.duration;
+                                                    const hour = Math.floor(duration / 3600);
+                                                    const minute = Math.floor((duration / 60) % 60);
+                                                    const second = Math.floor(duration % 60);
+                                                    const viewstr = hour + ':' + String(minute).padStart(2, '0') + ':' + String(second).padStart(2, '0');
+                                                %>
+                                                <span class="tag is-danger">
+                                                    <i class="fa fa-microphone"></i>
+                                                </span>
+                                                <span class="tag is-danger is-light">
+                                                    <%- viewstr %>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div class="control">
+                                            <div class="tags has-addons">
+                                                <span class="tag is-link">
+                                                    <i class="fa fa-calendar"></i>
+                                                </span>
+                                                <span class="tag is-link is-light">
+                                                    <%- date(post.date, theme.timeformat) %>
+                                                </span>
+                                            </div>
+                                        </div>
                                     </div>
                                 <% } else { %>
-                                    <div class="tags">
-                                        <span class="tag is-danger">
+                                    <div class="tags has-addons">
+                                        <span class="tag is-link">
+                                            <i class="fa fa-calendar"></i>
+                                        </span>
+                                        <span class="tag is-link is-light">
                                             <%- date(post.date, theme.timeformat) %>
                                         </span>
                                     </div>
@@ -53,10 +74,12 @@
                             
                             <!-- Post tags -->
                             <div class="level-item">
-                                <% if (post.tags) { %> 
+                                <% if (post.tags) { %>
                                     <div class="tags">
                                         <% (post.tags).forEach(function(item) { %>
-                                            <span class="tag"># <%= item.name %></span>
+                                            <span class="tag">
+                                                # <%= item.name %>
+                                            </span>
                                         <% }); %>
                                     </div>
                                 <% } %>
