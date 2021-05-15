@@ -73,9 +73,12 @@
                         <div class="level-item">
                             <% if (page.tags) { %>
                                 <div class="tags">
+                                    <span class="tag">
+                                        <%- date(page.date, theme.timeformat) %>
+                                    </span>
                                     <% (page.tags).forEach(function(item) { %>
                                         <span class="tag"># <%= item.name %></span>
-                                        <% }); %>
+                                    <% }); %>
                                 </div>
                             <% } %>
                         </div>
