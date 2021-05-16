@@ -73,6 +73,8 @@ Then you can get:
 
     For Podcast post, you only need to fill in the Meta meta information according to the format, and a player will be automatically generated in the article (*Special thanks to Shikwasa!*).
 
+    If you completed `chapters` field, the audio player will also shown with **Chapters List** :)
+
 3. **Rendering of meta-information inner article**
 
     After you fill in the Meta information, you can use the following tags to call the automatically rendered author information, citation information, and timeline:
