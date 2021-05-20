@@ -1,7 +1,7 @@
-<% if (is_post()) { %> 
-<section class="hero is-medium auto-dark">
+<% if (is_home()) { %> 
+<section class="hero is-<%= theme.header.index %> auto-dark">
 <% } else { %> 
-<section class="hero is-large auto-dark">
+<section class="hero is-<%= theme.header.other %> auto-dark">
 <% } %>
     <div class="hero-head">
         <header class="navbar" aria-label="main navigation">
@@ -69,4 +69,10 @@
             </p>
         </div>
     </div>
+
+    <% if (is_home()) { %>
+        <div class="hero-foot">
+
+        </div>
+    <% } %>
 </section>

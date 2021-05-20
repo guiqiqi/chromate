@@ -8,6 +8,18 @@ logo:
   lightmode: null
   darkmode: null
 
+# Header size
+# Select from: ["fullheight", "large", "medium", "default"]
+# The page will be scroll to post thumbnail if autoscroll enabled
+# ------------------------------------------------------------
+# 选择 Header 的大小
+# 从大到小依次可以选择：["fullheight", "large", "medium", "default"]
+# 如果启用 autoscroll 在进入文章后会自动跳转至文章 Thumbnail 处
+header:
+  index: large
+  other: medium
+  autoscroll: true
+
 # Favicon file link
 # ------------------------------------------------------------
 # Favicon 文件地址

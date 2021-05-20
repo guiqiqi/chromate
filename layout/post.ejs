@@ -1,6 +1,16 @@
 <div class="columns">
     <div class="column is-8 is-offset-2">
-        <div class="card">
+        <div id="post" class="card">
+            <% if (theme.header.autoscroll) { %> 
+                <script>
+                    window.addEventListener("load", ()=>{
+                        let content = document.getElementById("post");
+                        content.scrollIntoView({ 
+                            behavior: "smooth" 
+                        });
+                    });
+                </script>
+            <% } %>
             <% if (page.thumbnail) { %>
                 <div class="card-iamge">
                     <figure class="image is-16by9">
