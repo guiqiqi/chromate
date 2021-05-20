@@ -7,6 +7,7 @@ logo:
   enable: false
   lightmode: null
   darkmode: null
+  rss: null
 
 # Header size
 # Select from: ["fullheight", "large", "medium", "default"]
