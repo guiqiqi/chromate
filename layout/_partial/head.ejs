@@ -1,6 +1,8 @@
 <head>
     <title><%= config.title %></title>
-    <% if (theme.favicon) favicon_tag(theme.favicon) %>
+    <% if (theme.favicon) { %>
+        <%- favicon_tag(theme.favicon) %> 
+    <% } %>
     <meta charset="utf-8">
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
