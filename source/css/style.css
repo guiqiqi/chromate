@@ -3,6 +3,11 @@ pre {
     padding: 0%!important;
 }
 
+#mourn {
+    filter: grayscale(1) !important;
+    -webkit-filter: grayscale(1) !important;
+}
+
 @media(prefers-color-scheme:dark) {
     * {
         transition: backgourd-color .5s

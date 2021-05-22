@@ -1,3 +1,14 @@
+<% if (theme.boardcast.enable) { %>
+    <div class="columns">
+        <div class="column is-8 is-offset-2">
+            <article class="message is-<%- theme.boardcast.color %>">
+                <div class="message-body">
+                    <%= theme.boardcast.message %>
+                </div>
+            </article>
+        </div>
+    </div>
+<% } %>
 <% page.posts.each(function (post) { %>
     <div class="columns">
         <div class="column is-8 is-offset-2">

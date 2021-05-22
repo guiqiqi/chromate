@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="<%= config.language %>">
+<% if (theme.mourn) { %>
+    <html lang="<%= config.language %>" id="mourn">
+<% } else { %>
+    <html lang="<%= config.language %>">
+<% } %>
     <%- partial('_partial/head') %>
     <body>
         <%- partial('_partial/header') %>

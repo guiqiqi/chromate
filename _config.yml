@@ -111,3 +111,26 @@ rss:
       'Technology': []
     }
     explicit: false
+
+# Boardcast info will show in top of the post list
+# Color:
+#   default: grey
+#   danger: red
+#   info: blue
+#   warning: yellow
+# ------------------------------------------------------------
+# 站点消息广播 - 会显示在首页的文章列表顶部
+# 广播块颜色选择:
+#   default: 灰色
+#   danger: 红色
+#   info: 蓝色
+#   warning: 黄色
+boardcast: 
+  enable: false
+  color: default
+  message: 'Memorial hero Yuan Longping.'
+
+# Site mourn mode, enable to get a global grayscale filter
+# ------------------------------------------------------------
+# 站点悼念模式 - 启用后会为站点整体提供灰色滤镜
+mourn: false
