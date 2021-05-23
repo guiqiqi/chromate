@@ -1,0 +1,32 @@
+{
+    "name": "hexo-theme-chromate",
+    "version": "0.0.0",
+    "author": {
+        "name": "Doge-GUI",
+        "email": "guiqiqi187@gmail.com",
+        "url": "https://init.blog"
+    },
+    "description": "A new Hexo theme designed for Podcasters.",
+    "keywords": [
+        "hexo", 
+        "chromate", 
+        "podcast", 
+        "card-design", 
+        "bulma",
+        "responsive",
+        "darkmode"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/guiqiqi/chromate.git"
+    },
+    "license": "MIT",
+    "main": "README.md",
+    "bugs": {
+        "url": "https://github.com/guiqiqi/chromate/issues"
+    },
+    "homepage": "https://github.com/guiqiqi/chromate",
+    "dependencies": {
+        "podcast": "^1.3.0"
+    }
+}

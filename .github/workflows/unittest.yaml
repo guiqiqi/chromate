@@ -1,0 +1,20 @@
+name: Hexo Theme Chromate Test
+on: [push]
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Node.js envs
+        uses: actions/setup-node@v1
+        with:
+          node-version: "12.x"
+      - name: Generate
+        run: |
+          git clone https://github.com/hexojs/hexo-theme-unit-test.git test
+          git clone https://github.com/guiqiqi/storage.git config
+          mv config/_config.yml test/_config.yml
+          git clone https://github.com/guiqiqi/chromate.git test/themes/chromate
+          cd test
+          npm install
+          npm install podcast --save
+          npx hexo clean && npx hexo generate
