@@ -43,7 +43,11 @@
             </p>
             <p class="subtitle is-size-6">
                 <%- config.description %>
-                <div>
+                <% if (theme.subnav) { %>
+                    <div class="container is-uppercase subnav-top">
+                <% } else { %>
+                    <div class="container is-uppercase">
+                <% } %>
                     <% for (let index in theme.navbar) { %>
                         <% 
                             const mapping = theme.navbar[index];
@@ -66,13 +70,36 @@
                         </a>
                     <% } %>
                 </div>
+                <% if (theme.subnav) { %>
+                    <div class="container is-uppercase">
+                        <div class="columns subnav-bottom">
+                            <div class="column is-10-mobile is-offset-1-mobile is-one-third is-offset-one-third" style="padding: 0%;">
+                                <% for (let index in theme.subnav) { %>
+                                    <% 
+                                        const mapping = theme.subnav[index];
+                                        const link = mapping[0];
+                                        const favicon = mapping[1];
+                                        const description = mapping[2];
+                                        let outter = link.startsWith("https://") ? true : false;
+                                    %>
+                                    <% if (outter) { %>
+                                        <a class="mr-2" href="<%= link %>" target="_blank" rel="noopener noreferrer">
+                                    <% } else { %>  
+                                        <a class="mr-2" href="<%= link %>">
+                                    <% } %>
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <i class="<%= favicon %>"></i>
+                                            </span>
+                                            <span><%= description %></span>
+                                        </span>
+                                    </a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
             </p>
         </div>
     </div>
-
-    <% if (is_home()) { %>
-        <div class="hero-foot">
-
-        </div>
-    <% } %>
 </section>

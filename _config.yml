@@ -73,6 +73,17 @@ navbar:
   - ['https://github.com/guiqiqi/chromate', 'fa fa-github', '']
   - ['/feed.rss', 'fa fa-rss', '']
 
+# Subnav configuration will show below navbar with a horizontal divider
+# Configuration format as same as previous
+# ------------------------------------------------------------
+# Sub Navbar 将会在 Navbar 下方展示并以水平线与之分割
+# 配置模式与上面类似
+subnav:
+  - ['#love', 'fa fa-heart', 'Love']
+  - ['#peace', 'fa fa-globe', 'Peace']
+  - ['#human', 'fa fa-male', 'Human']
+
+
 # Menubar and its texts
 # ------------------------------------------------------------
 # 菜单栏的地址和文字
