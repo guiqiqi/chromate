@@ -44,9 +44,9 @@
             <p class="subtitle is-size-6">
                 <%- config.description %>
                 <% if (theme.subnav) { %>
-                    <div class="container is-uppercase subnav-top">
+                    <div class="container subnav-top">
                 <% } else { %>
-                    <div class="container is-uppercase">
+                    <div class="container">
                 <% } %>
                     <% for (let index in theme.navbar) { %>
                         <% 
@@ -71,7 +71,7 @@
                     <% } %>
                 </div>
                 <% if (theme.subnav) { %>
-                    <div class="container is-uppercase">
+                    <div class="container has-text-weight-medium is-size-7">
                         <div class="columns subnav-bottom">
                             <div class="column is-10-mobile is-offset-1-mobile is-one-third is-offset-one-third" style="padding: 0%;">
                                 <% for (let index in theme.subnav) { %>
