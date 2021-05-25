@@ -53,35 +53,3 @@ hexo.extend.tag.register('timeline', function (_args) {
     `
     , {page: page, urler: urler});
 });
-
-hexo.extend.tag.register('feed', function(_args) {
-    let page = this;
-    if (!(page.feed))
-        return;
-    return ejs.render(`
-    <ul class="has-text-weight-light feeding">
-        <% (page.feed).forEach(function(setting) { %>
-            <%
-                const link = setting[0];
-                const favicon = setting[1];
-                const title = setting[2];
-                let outter = link.startsWith("https://") ? true : false;
-            %>
-            <li>
-                <% if (outter) { %>
-                    <a href="<%= link %>" target="_blank" rel="noopener noreferrer">
-                <% } else { %>
-                    <a href="<%= link %>">
-                <% } %>
-                    <span class="icon-text">
-                        <span class="icon has-text-danger">
-                            <i class="<%= favicon %>"></i>
-                        </span>
-                        <span class="has-text-black-bis"><%= title %></span>
-                    </span>
-                </a>
-            </li>
-        <% }); %>
-    </ul>
-    `, {page: page});
-});
