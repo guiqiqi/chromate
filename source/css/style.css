@@ -64,3 +64,7 @@ pre {
     padding: 1rem 1rem 1rem!important;
     background-color: transparent!important
 }
+
+.feeding :hover {
+    font-weight: normal;
+}
