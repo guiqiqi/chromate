@@ -43,33 +43,39 @@
             </p>
             <p class="subtitle is-size-6">
                 <%- config.description %>
-                <% if (theme.subnav) { %>
-                    <div class="container subnav-top">
-                <% } else { %>
-                    <div class="container">
-                <% } %>
-                    <% for (let index in theme.navbar) { %>
-                        <% 
-                            const mapping = theme.navbar[index];
-                            const link = mapping[0];
-                            const favicon = mapping[1];
-                            const description = mapping[2];
-                            let outter = link.startsWith("https://") ? true : false;
-                        %>
-                        <% if (outter) { %>
-                            <a href="<%= link %>" target="_blank" rel="noopener noreferrer">
-                        <% } else { %>  
-                            <a href="<%= link %>">
-                        <% } %>
-                            <span class="icon-text">
-                                <span class="icon">
-                                    <i class="<%= favicon %>"></i>
-                                </span>
-                                <span><%= description %></span>
-                            </span>
-                        </a>
+                <% if (theme.navbar) { %> 
+                    <% if (theme.subnav) { %>
+                        <div class="container subnav-top">
+                    <% } else { %>
+                        <div class="container">
                     <% } %>
-                </div>
+                        <div class="columns subnav-bottom">
+                            <div class="column is-10-mobile is-offset-1-mobile is-one-third is-offset-one-third">
+                                <% for (let index in theme.navbar) { %>
+                                    <% 
+                                        const mapping = theme.navbar[index];
+                                        const link = mapping[0];
+                                        const favicon = mapping[1];
+                                        const description = mapping[2];
+                                        let outter = link.startsWith("https://") ? true : false;
+                                    %>
+                                    <% if (outter) { %>
+                                        <a href="<%= link %>" target="_blank" rel="noopener noreferrer">
+                                    <% } else { %>  
+                                        <a href="<%= link %>">
+                                    <% } %>
+                                        <span class="icon-text">
+                                            <span class="icon">
+                                                <i class="<%= favicon %>"></i>
+                                            </span>
+                                            <span><%= description %></span>
+                                        </span>
+                                    </a>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
                 <% if (theme.subnav) { %>
                     <div class="container has-text-weight-medium is-size-7">
                         <div class="columns subnav-bottom">
