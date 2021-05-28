@@ -31,7 +31,6 @@ hexo.extend.tag.register('timeline', function (_args) {
     let page = this;
     if (!(page.podcast && page.podcast.chapters))
         return;
-    const urler = hexo.extend.helper.get("full_url_for").bind(hexo);
     return ejs.render(`
     <ul>
         <% (page.podcast.chapters).forEach(function(item) { %>
@@ -51,5 +50,5 @@ hexo.extend.tag.register('timeline', function (_args) {
         <% }); %>
     </ul>
     `
-    , {page: page, urler: urler});
+    , {page: page});
 });

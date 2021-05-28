@@ -6,6 +6,7 @@ hexo.extend.generator.register("feed", (locals) => {
     const config = hexo.config;
     const theme = hexo.theme.config;
     const urler = hexo.extend.helper.get("url_for").bind(hexo);
+    const fullurl = hexo.extend.helper.get("full_url_for").bind(hexo);
     const hstrip = hexo.extend.helper.get("strip_html").bind(hexo);
     if (!theme.rss || !theme.rss.enable) return;
 
@@ -54,6 +55,12 @@ hexo.extend.generator.register("feed", (locals) => {
             .replace(/id=".*?"/gi, '').replace(/rel=".*?"/gi, '')
             .replace(/title=".*?"/gi, '').replace(/\n/g, "")
             .replace(/\s+/g, ' ').trim();
+
+        // Check local media url
+        let url = post.podcast.media.url;
+        if (!(url.startsWith("http://") || url.startsWith("https://")))
+            url = fullurl(post.path, {relative: false}).replace("index.html", '') + url;
+
         feed.addItem({
             title: post.title,
             description: description,

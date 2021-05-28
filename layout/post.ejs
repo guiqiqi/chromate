@@ -54,22 +54,30 @@
                         <% } %>
                     <script>
                         window.addEventListener("load", () => {
-                            if (chapters !== [])
-                                Shikwasa.use(Chapter);
+                            if (chapters !== []) Shikwasa.use(Chapter);
+
+                            // Check for local audio media url
+                            let url = "<%= page.podcast.media.url %>";
+                            if (!(url.startsWith("http://") || url.startsWith("https://")))
+                                url = "<%= full_url_for(path, {relative: false}) %>".replace("index.html", '') + url;
+
                             const player = new Shikwasa({
                                 container: () => document.querySelector('.post-podcast-player'),
-                                audio: {
+                                audio: {        
                                     title: "<%= page.title %>",
                                     artist: "<%= page.podcast.authors %>",
                                     cover: "<%= page.podcast.cover %>",
-                                    src: "<%= page.podcast.media.url %>",
+                                    duration: "<%= page.podcast.duration %>",
+                                    src: url,
                                     chapters: chapters
                                 },
                                 fixed: {
                                     type: "auto",
                                     position: "bottom"
                                 },
-                                themeColor: "red"
+                                themeColor: "red",
+                                preload: "metadata",
+                                autoplay: false
                             });
                             window.player = player;
                         }, false);
