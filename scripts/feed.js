@@ -69,14 +69,14 @@ hexo.extend.generator.register("feed", (locals) => {
             author: post.podcast.authors.join(', '),
             date: post.date,
             enclosure: {
-                url: post.podcast.media.url,
+                url: url,
                 type: post.podcast.media.type,
                 size: post.podcast.media.size
             },
             itunesAuthor: post.podcast.authors.join(', '),
             itunesExplicit: theme.rss.config.explicit,
             itunesSubtitle: post.podcast.subtitle,
-            itunesSummary: hstrip(post.excerpt),
+            itunesSummary: hstrip(description),
             itunesDuration: post.podcast.duration
         });
     });
