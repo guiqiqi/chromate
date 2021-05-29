@@ -1,21 +1,25 @@
-<div class="archive">
-    <% let lastyear = 0; let lastmonth = -1; %>
-    <aside class="menu">
-        <% site.posts.sort('date', -1).each(function(post) { %>
-            <% let year = post.date.year(); let month = post.date.month(); %>
-            <% if (lastyear !== year || lastmonth !== month) { %>
-                <% if (lastyear !== 0 || lastmonth !== -1){ %> 
-                    </ul>
-                <% } %>
-                <p class="menu-label"><%- date(post.date, "YYYY.MMM"); %></p>
-                <ul class="menu-list">
-                <% lastyear = year; lastmonth = month; %>
-            <% } %>
-            <li>
-                <a class="title" href="<%- url_for(post.path) %>">
-                    <%= post.title %>
-                </a>
-            </li>
-        <% }) %>
-    </aside>
+<div class="columns">
+    <div class="column is-8 is-offset-2">
+        <div class="archive">
+            <% let lastyear = 0; let lastmonth = -1; %>
+            <aside class="menu">
+                <% site.posts.sort('date', -1).each(function(post) { %>
+                    <% let year = post.date.year(); let month = post.date.month(); %>
+                    <% if (lastyear !== year || lastmonth !== month) { %>
+                        <% if (lastyear !== 0 || lastmonth !== -1){ %> 
+                            </ul>
+                        <% } %>
+                        <p class="menu-label"><%- date(post.date, "YYYY.MMM"); %></p>
+                        <ul class="menu-list">
+                        <% lastyear = year; lastmonth = month; %>
+                    <% } %>
+                    <li>
+                        <a class="title" href="<%- url_for(post.path) %>">
+                            <%= post.title %>
+                        </a>
+                    </li>
+                <% }) %>
+            </aside>
+        </div>
+    </div>
 </div>

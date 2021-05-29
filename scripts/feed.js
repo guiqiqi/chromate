@@ -32,7 +32,7 @@ hexo.extend.generator.register("feed", (locals) => {
     const feed = new podcast({
         title: config.title,
         description: config.description,
-        copyright: theme.copyright,
+        copyright: config.title + ' ' + theme.copyright,
         language: config.language.slice(0, 2),
         siteUrl: config.url,
         imageUrl: theme.logo.rss,
@@ -76,7 +76,6 @@ hexo.extend.generator.register("feed", (locals) => {
             itunesAuthor: post.podcast.authors.join(', '),
             itunesExplicit: theme.rss.config.explicit,
             itunesSubtitle: post.podcast.subtitle,
-            itunesSummary: hstrip(description),
             itunesDuration: post.podcast.duration
         });
     });
