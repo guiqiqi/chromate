@@ -75,6 +75,7 @@ hexo.extend.generator.register("feed", (locals) => {
             },
             itunesAuthor: post.podcast.authors.join(', '),
             itunesExplicit: theme.rss.config.explicit,
+            itunesSummary: hstrip(post.excerpt),
             itunesSubtitle: post.podcast.subtitle,
             itunesDuration: post.podcast.duration
         });
