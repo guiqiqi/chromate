@@ -1,5 +1,9 @@
 <head>
-    <title><%= config.title %></title>
+    <%
+        let title = config.title;
+        if (!is_home()) title = page.title + ' | ' + title;
+    %>
+    <title><%= title %></title>
     <% if (theme.favicon) { %>
         <%- favicon_tag(theme.favicon) %> 
     <% } %>
