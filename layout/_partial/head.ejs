@@ -1,7 +1,9 @@
 <head>
     <%
         let title = config.title;
-        if (!is_home()) title = page.title + ' | ' + title;
+        if (page.title !== undefined) {
+            if (!is_home()) title = page.title + ' | ' + title;
+        }
     %>
     <title><%= title %></title>
     <% if (theme.favicon) { %>
