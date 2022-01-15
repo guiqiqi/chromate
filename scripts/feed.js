@@ -11,6 +11,8 @@ hexo.extend.generator.register("feed", (locals) => {
     if (!theme.rss || !theme.rss.enable) return;
 
     const podcast = require("podcast");
+    if (podcast.hasOwnProperty('Podcast'))
+        podcast = podcast.Podcast;
 
     // Generate Podcast Categories content
     let categories = [];
