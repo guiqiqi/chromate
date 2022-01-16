@@ -1,5 +1,3 @@
-'use strict';
-
 hexo.extend.generator.register("feed", (locals) => {
 
     // Load config
@@ -10,8 +8,11 @@ hexo.extend.generator.register("feed", (locals) => {
     const hstrip = hexo.extend.helper.get("strip_html").bind(hexo);
     if (!theme.rss || !theme.rss.enable) return;
 
-    const podcast = require("podcast");
-    if (podcast.hasOwnProperty('Podcast'))
+    let podcast = require("podcast");
+    function is_constructor(obj) {
+        return !!obj.prototype && !!obj.prototype.constructor.name;
+    }
+    if (!is_constructor(podcast))
         podcast = podcast.Podcast;
 
     // Generate Podcast Categories content
