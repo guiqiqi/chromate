@@ -8,17 +8,43 @@ pre {
     -webkit-filter: grayscale(1) !important;
 }
 
+:root {
+    --transition-speed: unset;
+    --background-color: white;
+    --brightness: 1;
+    --contrast: 1;
+}
+
 @media(prefers-color-scheme:dark) {
-    * {
-        transition: backgourd-color .5s
+    
+    :root:not([data-user-color-scheme]) {
+        --box-shadow: none!important;
+        --transition-speed: 0.5s;
+        --background-color: #121212!important;
+        --brightness: 0.7;
+        --contrast: 1.2;
     }
-    .card {
-        box-shadow: none!important;
-        background-color: #121212!important
-    }
-    img:not([src*=".svg"]) {
-        filter: brightness(.7) contrast(1.2);
-    }
+}
+
+[data-user-color-scheme='dark'] {
+    --box-shadow: none!important;
+    --transition-speed: 0.5s;
+    --background-color: #121212!important;
+    --brightness: 0.7;
+    --contrast: 1.2;
+}
+
+* {
+    transition: backgourd-color var(--transition-speed);
+}
+
+.card {
+    box-shadow: var(--box-shadow);
+    background-color: var(--background-color);
+}
+
+img:not([src*=".svg"]) {
+    filter: brightness(--brightness) contrast(--contrast);
 }
 
 @media screen and (max-width:1023px) {
