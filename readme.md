@@ -115,7 +115,7 @@ The theme uses the following third-party resources:
 
 - [Bulma CSS Framework](https://bulma.io)
 - [Highlight.js](https://highlightjs.org)
-- [Bulma Prefers Dark](https://github.com/jloh/bulma-prefers-dark)
+- [Bulmaswatch](https://jenil.github.io/bulmaswatch)
 - [Shikwasa Audio Player](https://shikwasa.js.org)
 - [Podcast generator for Node.js](https://github.com/maxnowack/node-podcast)
 
