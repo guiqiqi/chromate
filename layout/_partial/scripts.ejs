@@ -24,13 +24,14 @@
     <script>
         window.addEventListener("load", () => {
             const theme_selector = (mode) => {
-                if (mode === SystemDarkmodePrefrence.dark) {
+                if (mode === SystemDarkmodePreference.dark) {
                     document.getElementById("highlight-light-theme").setAttribute("disabled", "disabled");
                     document.getElementById("highlight-dark-theme").removeAttribute("disabled");
                 } else {
                     document.getElementById("highlight-dark-theme").setAttribute("disabled", "disabled");
                     document.getElementById("highlight-light-theme").removeAttribute("disabled");
                 }
+                console.debug(`highlightjs theme set to ${mode}`);
             };
             darklistener.add(theme_selector);
         }, false);

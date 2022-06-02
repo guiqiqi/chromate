@@ -63,7 +63,7 @@
 
                             const player = new Shikwasa({
                                 container: () => document.querySelector('.post-podcast-player'),
-                                audio: {        
+                                audio: {
                                     title: "<%= page.title %>",
                                     artist: "<%= page.podcast.authors %>",
                                     cover: "<%= page.podcast.cover %>",
@@ -82,7 +82,7 @@
                             window.player = player;
                         }, false);
                     </script>
-                <% } %>
+                    <% } %>
                 <section class="content is-size-6">
                     <%- page.content %>
                 </section>
