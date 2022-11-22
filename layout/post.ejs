@@ -54,14 +54,14 @@
                         <% } %>
                     <script>
                         window.addEventListener("load", () => {
-                            if (chapters !== []) Shikwasa.use(Chapter);
+                            const { Player } = window.Shikwasa;
 
                             // Check for local audio media url
                             let url = "<%= page.podcast.media.url %>";
                             if (!(url.startsWith("http://") || url.startsWith("https://")))
                                 url = "<%= full_url_for(path, {relative: false}) %>".replace("index.html", '') + url;
 
-                            const player = new Shikwasa({
+                            const player = new Player({
                                 container: () => document.querySelector('.post-podcast-player'),
                                 audio: {        
                                     title: "<%= page.title %>",
